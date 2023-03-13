@@ -31,3 +31,26 @@ Aggiungiamo un seeder per la classe Train usando FakerPHP.
 BONUS MILESTONE 4:
 
 Implementare il seeder un file csv.
+
+
+
+Terminal commands
+
+MIGRATION
+- php artisan make:migration create_trains_table
+- php artisan make:migration add_train_full_name_to_trains_table --table=trains
+- php artisan migrate
+- php artisan migrate:rollback
+
+MODEL
+- php artisan make:model train
+
+CONTROLLER
+- php artisan make:controller Guest/pageController
+
+SEEDER
+- php artisan make:seeder trainsTableSeeder
+
+(remove 'seeds' from table)
+- php artisan migrate:refresh --seed 
+- php artisan db:seed --class=trainsTableSeeder   
