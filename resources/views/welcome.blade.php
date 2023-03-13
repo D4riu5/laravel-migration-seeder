@@ -12,17 +12,27 @@
     <body class="bg-dark text-white">
 
         <main>
-
-
-            <div class="container m-5">
-                <div class="row">
-                    <h2>Trains leaving today:</h2>
+            <div class="container">
+                <div class="row my-5">
+                    <h2 class="my-4">
+                        Trains leaving today:
+                    </h2>
                     @foreach ($trains as $train)
-                    <div class="col-3">
-                        <div class="card text-dark p-2">
-                            <h4>
-                               {{  $train->train_full_name }}
-                            </h4>
+                    <div class="col-6">
+                        <div class="card my-3">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                {{  $train->train_full_name }}
+                              </li>
+                              <li class="list-group-item">
+                                From {{ $train->departure_station }} 
+                              </li>
+                              <li class="list-group-item">
+                                <button>
+                                    More info
+                                </button>
+                            </li>
+                            </ul>
                         </div>
                     </div>
                 @endforeach

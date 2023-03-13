@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 // MODELS
+use App\Models\Train;
 
-use App\Models\train;
+
+// HELPERS
 
 class pageController extends Controller
 {
@@ -16,7 +18,9 @@ class pageController extends Controller
         // $trains = train::get();
         
         // get trains that match departure_time with today
-        $trains = Train::whereDate('departure_time', '=', now()->toDateString())->get();
+        $trains = Train::whereDate('departure_time', '=', now()->toDateString())
+                ->where('canceled', false)
+                ->get();
 
         // dd($trains);
         return view('welcome', [
