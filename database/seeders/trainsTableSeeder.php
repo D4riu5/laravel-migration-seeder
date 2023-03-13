@@ -42,7 +42,7 @@ class trainsTableSeeder extends Seeder
             $train->number_of_carriages = $faker->numberBetween(6, 50);
             $train->on_time = $faker->numberBetween(0, 1);
             $train->canceled = $faker->numberBetween(0, 1);
-            $train->train_full_name = $train->company . ' ' . $train->train_code . ' ' . $train->arrival_station;
+            $train->train_full_name = $train->train_code . '-' . $train->arrival_station;
             $train->save();
         }
         

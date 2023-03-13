@@ -15,4 +15,5 @@ use App\Http\Controllers\Guest\PageController as GuestController;
 |
 */
 
-Route::get('/', [GuestController::class, 'index']);
+Route::get('/', [GuestController::class, 'index'])->name('home');
+Route::get('/train/{id}', [GuestController::class, 'show'])->name('trainInfo');

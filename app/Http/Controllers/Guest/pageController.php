@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 use App\Models\Train;
 
 
-// HELPERS
-
 class pageController extends Controller
 {
     public function index(){
@@ -27,4 +25,13 @@ class pageController extends Controller
             'trains' => $trains
         ]);
     }
+
+    public function show($id){
+        $train = Train::find($id);
+
+        return view('show', [
+            'train' => $train
+        ]);
+    }
+
 }

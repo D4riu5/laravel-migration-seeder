@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            DB::statement('UPDATE trains SET train_full_name = CONCAT(company, " ", train_code, " ", arrival_station)');
+            DB::statement('UPDATE trains SET train_full_name = CONCAT(train_code, " ", arrival_station)');
         });
     }
 
